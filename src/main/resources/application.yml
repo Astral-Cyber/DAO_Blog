@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: dao_blog
+  datasource:
+    username: root
+    password: M142753869.
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&characterEncoding=UTF-8
+    hikari:
+      minimum-idle: 8
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: blogHikari
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  devtools:
+    restart:
+      enabled: true
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+        show_sql: true
+        enable_lazy_load_no_trans: true
