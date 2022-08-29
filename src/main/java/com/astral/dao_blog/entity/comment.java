@@ -1,5 +1,7 @@
 package com.astral.dao_blog.entity;
 
+import com.astral.dao_blog.util.DateSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,5 +19,6 @@ public class comment {
     @Column
     String content;
     @Column
+    @JsonSerialize(using = DateSerializer.class)
     Date commentDate;
 }

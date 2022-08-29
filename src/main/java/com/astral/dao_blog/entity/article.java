@@ -1,6 +1,8 @@
 package com.astral.dao_blog.entity;
 
+import com.astral.dao_blog.util.DateSerializer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,8 +19,11 @@ public class article {
     @Column
     String topic;
     @Column
+    String intro;
+    @Column
     String URL;
     @Column
+    @JsonSerialize(using = DateSerializer.class)
     Date releaseDate;
     @ManyToOne
     @JoinColumn
