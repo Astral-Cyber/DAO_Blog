@@ -16,7 +16,7 @@ public class assort {
     @Column
     String name;
     @JsonIgnore
-    @JoinColumn
-    @OneToMany
+    @Column
+    @OneToMany(mappedBy = "as")
     List<article> articles;
 }

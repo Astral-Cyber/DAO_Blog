@@ -3,9 +3,9 @@ package com.astral.dao_blog.controller;
 import com.astral.dao_blog.entity.article;
 import com.astral.dao_blog.entity.comment;
 import com.astral.dao_blog.service.ArticleService;
+import com.astral.dao_blog.util.articleInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,12 +14,18 @@ public class ArticleController {
     @Autowired
     ArticleService articleService;
 
-    @RequestMapping("show")
-    public List<article> show(){
+    @GetMapping("/api/show")
+    public List<article> show() {
         return articleService.show();
     }
-    @RequestMapping("comment")
-    public List<comment> comments(){
-        return articleService.comments();
+
+    @GetMapping("/api/comment")
+    public List<comment> comments(@RequestParam("url") String url) {
+        return articleService.comments(url);
+    }
+
+    @PostMapping("/admin/submit")
+    public String editor(@RequestBody articleInfo articleInfo){
+        return articleService.submit(articleInfo);
     }
 }

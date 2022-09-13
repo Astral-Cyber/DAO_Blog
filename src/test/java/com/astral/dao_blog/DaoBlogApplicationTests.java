@@ -1,9 +1,7 @@
 package com.astral.dao_blog;
 
-import com.astral.dao_blog.dao.ArticleDao;
-import com.astral.dao_blog.dao.AssortDao;
 import com.astral.dao_blog.entity.article;
-import com.astral.dao_blog.entity.comment;
+import com.astral.dao_blog.service.AssortService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,25 +11,13 @@ import java.util.List;
 @SpringBootTest
 class DaoBlogApplicationTests {
     @Autowired
-    ArticleDao articleDao;
-    @Autowired
-    AssortDao assortDao;
+    AssortService assortService;
 
     @Test
     void contextLoads() {
-        List<article> list= articleDao.findAll();
+        List<article> list=assortService.ofAssort("sort1");
         for (article art:list) {
-            System.out.println(art.getURL() + " " + art.getAs().getName());
-            for (comment com : art.getComments()) {
-                System.out.println(com.getContent());
-            }
-            System.out.println("+++++++++++++++++++++++++++++++++++");
+            System.out.println(art.getTopic());
         }
-//        List<assort> list = assortDao.findAll();
-//        for (assort as : list) {
-//            for (article art:as.getArticles()) {
-//                System.out.println(art.getURL());
-//            }
-//        }
     }
 }
