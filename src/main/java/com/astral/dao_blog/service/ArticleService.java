@@ -10,4 +10,5 @@ public interface ArticleService {
     public List<article> show();
     public List<comment> comments(String url);
     public String submit(articleInfo articleInfo);
+    public String delete(int id);
 }

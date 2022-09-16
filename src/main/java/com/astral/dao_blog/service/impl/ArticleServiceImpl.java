@@ -49,11 +49,20 @@ public class ArticleServiceImpl implements ArticleService {
                 FileOutputStream outStream = new FileOutputStream(file);
                 outStream.write(contentByte);
                 outStream.close();    //关闭文件输出流
-                return "发布成功!";
             }
         } catch (Exception e) {
             return "发布失败，请重试～";
         }
-        return null;
+        return "发布成功！";
+    }
+
+    @Override
+    public String delete(int id) {
+        try {
+        articleDao.deleteById(id);
+        }catch (Exception e){
+            return "删除失败，请重试～";
+        }
+        return "删除成功！";
     }
 }

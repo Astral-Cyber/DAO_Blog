@@ -9,4 +9,5 @@ public interface AssortService {
     public List<article> ofAssort(String name);
 
     public List<assort> allAssort();
+    public String newAssort(String name);
 }

@@ -26,4 +26,16 @@ public class AssortServiceImpl implements AssortService {
     public List<assort> allAssort() {
         return assortDao.findAll();
     }
+
+    @Override
+    public String newAssort(String name) {
+        try {
+            assort assort=new assort();
+            assort.setName(name);
+            assortDao.save(assort);
+        }catch (Exception e){
+            return "新建失败";
+        }
+        return "新建成功";
+    }
 }

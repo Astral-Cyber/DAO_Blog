@@ -28,4 +28,9 @@ public class ArticleController {
     public String editor(@RequestBody articleInfo articleInfo){
         return articleService.submit(articleInfo);
     }
+
+    @DeleteMapping("/admin/delete")
+    public String delete(@RequestParam("id") int id) {
+        return articleService.delete(id);
+    }
 }
