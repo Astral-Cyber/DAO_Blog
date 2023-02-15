@@ -9,12 +9,17 @@ import java.util.List;
 
 @RestController
 public class AssortController {
+
+    final AssortService assortService;
     @Autowired
-    AssortService assortService;
+    public AssortController(AssortService assortService){
+        this.assortService=assortService;
+    }
     @GetMapping("/admin/allSorts")
     public List<assort> allSorts(){
         return assortService.allAssort();
     }
+
     @PostMapping("/admin/newSort")
     public String newSort(@RequestBody String name){
         return assortService.newAssort(name);

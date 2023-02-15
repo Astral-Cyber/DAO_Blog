@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UploadController {
 //    @RequestMapping("/uploadArticle")
 //    public String upload(@RequestParam("article") MultipartFile article) throws FileNotFoundException {
-//        String path = ResourceUtils.getURL("classpath:").getPath() + "/static/article";
+//        String path = ResourceUtils.getContent("classpath:").getPath() + "/static/article";
 //        UUID uuid = UUID.randomUUID();
 //        String articleName = uuid.toString();
 //        try {

@@ -15,7 +15,7 @@ public class WebSecurityConfig {
                 .antMatchers("/api/**").permitAll()
                 .anyRequest().permitAll()
                 .and().headers().frameOptions().sameOrigin()
-                .and().csrf().disable();;
+                .and().csrf().disable();
         return httpSecurity.build();
     }
 

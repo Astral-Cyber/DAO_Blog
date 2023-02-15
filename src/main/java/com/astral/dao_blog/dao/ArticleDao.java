@@ -6,8 +6,10 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.util.List;
 
-public interface ArticleDao extends JpaRepository<article,Integer>, JpaSpecificationExecutor<article> {
-        article findByURL(String URL);
-        List<article> findByAsId(int id);
-        article findByTopic(String topic);
+public interface ArticleDao extends JpaRepository<article, Integer>, JpaSpecificationExecutor<article> {
+    List<article> findAllByAsName(String name);
+
+    article findByTopic(String topic);
+
+    boolean existsByTopic(String topic);
 }

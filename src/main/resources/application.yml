@@ -6,7 +6,7 @@ spring:
   datasource:
     username: root
     password: M142753869.
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&characterEncoding=UTF-8
     hikari:
       minimum-idle: 8

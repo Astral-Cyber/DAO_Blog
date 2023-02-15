@@ -20,8 +20,8 @@ public class article {
     String topic;
     @Column
     String intro;
-    @Column
-    String URL;
+    @Column(columnDefinition = "LONGTEXT")
+    String Content;
     @Column
     @JsonSerialize(using = DateSerializer.class)
     Date releaseDate;

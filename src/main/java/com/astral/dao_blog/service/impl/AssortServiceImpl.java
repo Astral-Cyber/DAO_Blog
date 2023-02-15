@@ -19,9 +19,8 @@ public class AssortServiceImpl implements AssortService {
 
     @Override
     public List<article> ofAssort(String name) {
-        return articleDao.findByAsId(assortDao.findByName(name).getId());
+        return articleDao.findAllByAsName(name);
     }
-
     @Override
     public List<assort> allAssort() {
         return assortDao.findAll();

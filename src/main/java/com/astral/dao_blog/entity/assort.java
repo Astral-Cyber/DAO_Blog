@@ -11,10 +11,9 @@ import java.util.List;
 @Data
 public class assort {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    @Column
     String name;
+//    @Column
+//    Integer id;
     @JsonIgnore
     @Column
     @OneToMany(mappedBy = "as")
