@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+//跨域
+@CrossOrigin
 public class ArticleController {
     @Autowired
     ArticleService articleService;
