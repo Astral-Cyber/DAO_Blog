@@ -4,7 +4,7 @@
 - 主要技术栈：SpringBoot SpringSecurity lombok
 - 数据库：MySQL
 
-## [前端项目](https://github.com/Astral-Cyber/DAO)
+## 👉[前端](https://github.com/Astral-Cyber/DAO)
 
 ## 🔮功能实现
 
